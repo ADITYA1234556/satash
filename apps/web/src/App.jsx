@@ -9,6 +9,7 @@ import ProjectsPage from '@/pages/ProjectsPage.jsx';
 import ContactPage from '@/pages/ContactPage.jsx';
 import AboutPage from '@/pages/AboutPage.jsx';
 import InspectionReportsPage from '@/pages/InspectionReports.jsx';
+import StandardsPage from '@/pages/StandardsPage.jsx';
 import { Toaster } from '@/components/ui/toaster';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/reports" element={<InspectionReportsPage />} />
+            <Route path="/standards" element={<StandardsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
