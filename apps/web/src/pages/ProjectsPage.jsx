@@ -2,43 +2,44 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Heart, Home, Star, Brain, Users, FolderHeart as HandHeart } from 'lucide-react';
+// import { Heart, Home, Star, Brain, Users, FolderHeart as HandHeart } from 'lucide-react';
+import { FcHome } from "react-icons/fc";
 import ServiceCard from '@/components/ServiceCard.jsx';
 
 const ProjectsPage = () => {
   const projects = [
     {
-      icon: Heart,
-      title: 'Complex Care',
+      icon: FcHome,
+      title: 'Orchid Project',
       description:
         'Specialized support for individuals with complex health needs, delivered by our highly trained team. We provide person-centered care that addresses medical, emotional, and social needs with compassion and expertise.',
     },
     {
-      icon: Home,
-      title: 'Live-in Care',
+      icon: FcHome,
+      title: 'Jasmine Bungalow',
       description:
         'Round-the-clock support in the comfort of your own home. Our dedicated caregivers provide 24/7 assistance while respecting your independence and personal preferences, ensuring safety and dignity.',
     },
     {
-      icon: Star,
-      title: 'Extra Care',
+      icon: FcHome,
+      title: 'Lotus Project',
       description:
         'Enhanced support services designed to promote independent living with additional assistance when needed. We empower individuals to maintain their lifestyle while providing the care they require.',
     },
     {
-      icon: Brain,
-      title: 'Learning Disabilities Care',
+      icon: FcHome,
+      title: 'Rose Project',
       description:
         'Specialized, person-centered support for individuals with learning disabilities. We focus on empowerment, skill development, and creating opportunities for meaningful community participation.',
     },
     {
-      icon: Users,
-      title: 'Supported Living',
+      icon: FcHome,
+      title: '109-111 Project',
       description:
         'Tailored support that promotes independence and community integration. We help individuals develop life skills, make their own choices, and live fulfilling lives in their chosen environment.',
     },
     {
-      icon: HandHeart,
+      icon: FcHome,
       title: 'Home Care',
       description:
         'Flexible care services delivered in your home, from personal care to companionship. Our compassionate team provides the support you need while respecting your independence and dignity.',
