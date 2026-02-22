@@ -60,9 +60,9 @@ const InspectionReportsPage = () => {
                     </div>
                     <Download className="w-6 h-6 text-[#4A90E2] flex-shrink-0" aria-hidden="true" />
                   </div>
-                  <button className="bg-[#4A90E2] hover:bg-[#2E5C8A] text-white px-6 py-2 rounded-lg transition-colors duration-300">
-                    Download Report
-                  </button>
+                  <p className="text-gray-700">
+                    This page is being updated with our latest inspection report. Please check back soon for the most recent findings and insights into our commitment to quality care.
+                  </p>
                 </div>
 
                 <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:border-[#4A90E2] transition-colors duration-300">
@@ -73,9 +73,9 @@ const InspectionReportsPage = () => {
                     </div>
                     <Download className="w-6 h-6 text-[#4A90E2] flex-shrink-0" aria-hidden="true" />
                   </div>
-                  <button className="bg-[#4A90E2] hover:bg-[#2E5C8A] text-white px-6 py-2 rounded-lg transition-colors duration-300">
-                    Download Report
-                  </button>
+                  <p className="text-gray-700">
+                    This page is being updated with our latest inspection report. Please check back soon for the most recent findings and insights into our commitment to quality care.
+                  </p>
                 </div>
               </div>
 
