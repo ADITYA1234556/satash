@@ -1,0 +1,22 @@
+{
+	"name": "monorepo",
+	"type": "module",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "npm --prefix apps/web run dev",
+		"build": "npm --prefix apps/web run build && node scripts/prepare-hostinger.js",
+		"start": "node server.js",
+		"lint": "npm --prefix apps/web run lint"
+	},
+	"dependencies": {
+		"express": "^4.18.2",
+		"react-icons": "^5.5.0"
+	},
+	"devDependencies": {
+		"concurrently": "^9.1.2"
+	},
+	"workspaces": [
+		"apps/*"
+	]
+}
