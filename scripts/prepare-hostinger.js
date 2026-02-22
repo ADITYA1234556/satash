@@ -8,11 +8,8 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
 const src = path.join(repoRoot, 'dist', 'apps', 'web');
 const dest = path.join(repoRoot, 'dist');
+const buildDest = path.join(repoRoot, 'build');
 const tempDest = path.join(repoRoot, '.dist-temp');
-
-// On Hostinger: repo is at .../public_html/.builds/source/repository/
-// We need to deploy to .../public_html/ (three levels up)
-const serverPublicHtml = path.resolve(repoRoot, '../../..');
 
 (async () => {
   try {
@@ -28,43 +25,28 @@ const serverPublicHtml = path.resolve(repoRoot, '../../..');
     // move temp to dist
     await fs.rename(tempDest, dest);
 
-    console.log('Prepared Hostinger dist at', dest);
+    console.log('✓ Prepared dist at', dest);
 
-    // Copy built files to server's public_html directory
+    // Copy to build directory for Hostinger
     try {
-      // Ensure the destination exists
-      await fs.mkdir(serverPublicHtml, { recursive: true });
+      // Remove old build directory
+      await fs.rm(buildDest, { recursive: true, force: true });
+      
+      // Create build directory
+      await fs.mkdir(buildDest, { recursive: true });
 
-      // Remove old files in public_html (but keep .htaccess and other important files)
-      const existingFiles = await fs.readdir(serverPublicHtml).catch(() => []);
-      for (const file of existingFiles) {
-        if (!['public_html', '.htaccess', '.htpasswd', 'error_log', 'access_log'].includes(file)) {
-          try {
-            const filePath = path.join(serverPublicHtml, file);
-            const stat = await fs.stat(filePath);
-            if (stat.isDirectory()) {
-              await fs.rm(filePath, { recursive: true, force: true });
-            } else {
-              await fs.rm(filePath, { force: true });
-            }
-          } catch (e) {
-            // Ignore errors removing files
-          }
-        }
-      }
-
-      // Copy all built content to public_html
+      // Copy all files from dist to build
       const distFiles = await fs.readdir(dest);
       for (const file of distFiles) {
         const src = path.join(dest, file);
-        const dst = path.join(serverPublicHtml, file);
+        const dst = path.join(buildDest, file);
         await fs.cp(src, dst, { recursive: true });
       }
 
-      console.log('✓ Deployed to server public_html at', serverPublicHtml);
+      console.log('✓ Deployed to build directory at', buildDest);
     } catch (e) {
-      console.warn('⚠ Warning: Could not deploy to server public_html:', e.message);
-      console.log('Files are available in repository ./dist/ directory');
+      console.error('✗ Failed to deploy to build directory:', e.message);
+      process.exit(1);
     }
   } catch (err) {
     console.error('✗ Failed to prepare Hostinger dist:', err);
