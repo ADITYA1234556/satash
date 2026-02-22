@@ -1,4 +1,7 @@
 .nvmrc
 .version
-apps/public/*
-apps/index.html
+apps/web/node_modules/*
+apps/web/public/*
+apps/web/index.html
+node_modules/*
+apps/node_modules/*
