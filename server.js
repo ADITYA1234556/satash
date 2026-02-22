@@ -36,11 +36,28 @@ if (!fs.existsSync(indexPath)) {
   process.exit(1);
 }
 
-// Serve static files
-app.use(express.static(staticDir));
+// Serve assets with proper MIME types and long-term caching
+app.use(express.static(staticDir, {
+  setHeaders: (res, path) => {
+    // Cache assets for 1 year (they have hashes in filenames)
+    if (path.includes('/assets/')) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    } else {
+      // Don't cache HTML
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    }
+    // Ensure proper MIME types
+    if (path.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    } else if (path.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css');
+    }
+  }
+}));
 
-// SPA fallback: serve index.html for all routes
+// SPA fallback: serve index.html for all routes (only if file doesn't exist)
 app.get('*', (req, res) => {
+	res.setHeader('Content-Type', 'text/html');
 	res.sendFile(indexPath);
 });
 
