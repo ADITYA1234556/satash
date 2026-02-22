@@ -7,6 +7,7 @@ import Footer from '@/components/Footer.jsx';
 import HomePage from '@/pages/HomePage.jsx';
 import ProjectsPage from '@/pages/ProjectsPage.jsx';
 import ContactPage from '@/pages/ContactPage.jsx';
+import AboutPage from '@/pages/AboutPage.jsx';
 import InspectionReportsPage from '@/pages/InspectionReports.jsx';
 import { Toaster } from '@/components/ui/toaster';
 

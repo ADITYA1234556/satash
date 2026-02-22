@@ -23,8 +23,8 @@ const Footer = () => {
             <nav aria-label="Footer navigation">
               <ul className="space-y-2">
                 <li>
-                  <Link to="/services" className="text-satash-blue-100 hover:text-white transition-colors">
-                    Services
+                  <Link to="/projects " className="text-satash-blue-100 hover:text-white transition-colors">
+                    Projects
                   </Link>
                 </li>
                 <li>

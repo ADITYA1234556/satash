@@ -6,7 +6,7 @@ import { Heart, Home, Star, Brain, Users, FolderHeart as HandHeart } from 'lucid
 import ServiceCard from '@/components/ServiceCard.jsx';
 
 const ProjectsPage = () => {
-  const services = [
+  const projects = [
     {
       icon: Heart,
       title: 'Complex Care',
@@ -48,7 +48,7 @@ const ProjectsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Our Services - Satash Community Care</title>
+        <title>Our Projects - Satash Community Care</title>
         <meta
           name="description"
           content="Explore our comprehensive range of person-centered care services including Complex Care, Live-in Care, Extra Care, Learning Disabilities Care, Supported Living, and Home Care."
@@ -64,7 +64,7 @@ const ProjectsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Projects</h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto text-satash-blue-50">
                 Comprehensive, person-centered care services designed to empower independence
                 and ensure dignity for every individual we serve.
@@ -77,7 +77,7 @@ const ProjectsPage = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
+              {projects.map((service, index) => (
                 <motion.div
                   key={service.title}
                   initial={{ opacity: 0, y: 20 }}
