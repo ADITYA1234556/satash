@@ -59,7 +59,7 @@ RM15 6DJ</span>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-satash-green-400 flex-shrink-0" aria-hidden="true" />
                 <a href="tel:+442012345678" className="text-satash-blue-100 hover:text-white transition-colors">
-                  +44 20 1234 5678
+                  +44 08000257606
                 </a>
               </li>
               <li className="flex items-center space-x-3">

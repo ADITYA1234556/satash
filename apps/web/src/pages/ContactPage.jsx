@@ -241,7 +241,7 @@ const ContactPage = () => {
                         href="tel:+442012345678"
                         className="text-satash-blue-600 hover:text-satash-blue-700 transition-colors"
                       >
-                        +44 20 1234 5678
+                        +44 08000257606
                       </a>
                     </div>
                   </div>
