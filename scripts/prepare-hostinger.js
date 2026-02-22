@@ -63,6 +63,3 @@ const tempDest = path.join(repoRoot, '.dist-temp');
     process.exit(1);
   }
 })();
-    process.exit(1);
-  }
-})();
