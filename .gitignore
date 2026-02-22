@@ -1,0 +1,4 @@
+.nvmrc
+.version
+apps/public/*
+apps/index.html
