@@ -8,8 +8,11 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
 const src = path.join(repoRoot, 'dist', 'apps', 'web');
 const dest = path.join(repoRoot, 'dist');
-const publicHtmlDest = path.join(repoRoot, 'public_html');
 const tempDest = path.join(repoRoot, '.dist-temp');
+
+// On Hostinger: repo is at .../public_html/.builds/source/repository/
+// We need to deploy to .../public_html/ (three levels up)
+const serverPublicHtml = path.resolve(repoRoot, '../../..');
 
 (async () => {
   try {
@@ -27,38 +30,44 @@ const tempDest = path.join(repoRoot, '.dist-temp');
 
     console.log('Prepared Hostinger dist at', dest);
 
-    // Also ensure files are in public_html for Hostinger to serve
+    // Copy built files to server's public_html directory
     try {
-      // Create public_html if needed
-      await fs.mkdir(publicHtmlDest, { recursive: true });
+      // Ensure the destination exists
+      await fs.mkdir(serverPublicHtml, { recursive: true });
 
-      // Remove old public_html content (except .htaccess)
-      const publicFiles = await fs.readdir(publicHtmlDest);
-      for (const file of publicFiles) {
-        if (file !== '.htaccess') {
-          await fs.rm(path.join(publicHtmlDest, file), { recursive: true, force: true });
+      // Remove old files in public_html (but keep .htaccess and other important files)
+      const existingFiles = await fs.readdir(serverPublicHtml).catch(() => []);
+      for (const file of existingFiles) {
+        if (!['public_html', '.htaccess', '.htpasswd', 'error_log', 'access_log'].includes(file)) {
+          try {
+            const filePath = path.join(serverPublicHtml, file);
+            const stat = await fs.stat(filePath);
+            if (stat.isDirectory()) {
+              await fs.rm(filePath, { recursive: true, force: true });
+            } else {
+              await fs.rm(filePath, { force: true });
+            }
+          } catch (e) {
+            // Ignore errors removing files
+          }
         }
       }
 
-      // Copy new files
+      // Copy all built content to public_html
       const distFiles = await fs.readdir(dest);
       for (const file of distFiles) {
-        await fs.cp(
-          path.join(dest, file),
-          path.join(publicHtmlDest, file),
-          { recursive: true }
-        );
+        const src = path.join(dest, file);
+        const dst = path.join(serverPublicHtml, file);
+        await fs.cp(src, dst, { recursive: true });
       }
 
-      console.log('Copied to public_html at', publicHtmlDest);
-
-      // Create a marker file to indicate successful build
-      await fs.writeFile(path.join(publicHtmlDest, '.build-success'), 'Build completed successfully');
+      console.log('✓ Deployed to server public_html at', serverPublicHtml);
     } catch (e) {
-      console.warn('Warning: Could not copy to public_html:', e.message);
+      console.warn('⚠ Warning: Could not deploy to server public_html:', e.message);
+      console.log('Files are available in repository ./dist/ directory');
     }
   } catch (err) {
-    console.error('Failed to prepare Hostinger dist:', err);
+    console.error('✗ Failed to prepare Hostinger dist:', err);
     await fs.rm(tempDest, { recursive: true, force: true }).catch(() => {});
     process.exit(1);
   }
