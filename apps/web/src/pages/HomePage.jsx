@@ -56,13 +56,13 @@ const HomePage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link to="/services">
+                <Link to="/projects">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="px-8 py-4 bg-satash-blue-400 text-white rounded-lg font-semibold text-lg shadow-lg hover:bg-satash-blue-500 transition-colors flex items-center space-x-2"
                   >
-                    <span>Explore Services</span>
+                    <span>Explore Our Projects</span>
                     <ArrowRight className="w-5 h-5" aria-hidden="true" />
                   </motion.button>
                 </Link>
