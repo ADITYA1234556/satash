@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Heart, Home, Star, Brain, Users, FolderHeart as HandHeart } from 'lucide-react';
 import ServiceCard from '@/components/ServiceCard.jsx';
 
-const ServicesPage = () => {
+const ProjectsPage = () => {
   const services = [
     {
       icon: Heart,
