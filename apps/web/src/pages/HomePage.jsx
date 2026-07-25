@@ -3,64 +3,12 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { ORGANIZATION, SERVICES, PROJECTS, CARE_VALUES } from '@/config/site.config.js';
 
 const HomePage = () => {
-  const services = [
-    {
-      title: 'Supported Living',
-      description: 'Secure, homely settings with tailored care, routines and community access.',
-    },
-    {
-      title: 'Person-Centred Plans',
-      description: 'Individualised support plans shaped around each person’s goals and preferences.',
-    },
-    {
-      title: 'Community Inclusion',
-      description: 'Meaningful local activities, social engagement and learning opportunities.',
-    },
-  ];
-
-  const pillars = [
-    {
-      title: 'Safety & Dignity',
-      description: 'We ensure every person feels safe, respected and empowered every day.',
-    },
-    {
-      title: 'Skilled Support',
-      description: 'Our team are trained in best-practice care, safeguarding and wellbeing.',
-    },
-    {
-      title: 'Trusted Relationships',
-      description: 'We build strong partnerships with families, professionals and service users.',
-    },
-  ];
-
-  const projectHighlights = [
-    {
-      title: '109 Mollands Lane',
-      description: 'A four-bedroom home with large gardens, private parking, ensuite or wash facilities and a welcoming communal living environment.',
-    },
-    {
-      title: '111 Mollands Lane',
-      description: 'A companion home offering accessible ground-floor rooms, supportive care, and a dedicated office space for staff coordination.',
-    },
-    {
-      title: 'Lotus Project',
-      description: 'A specialist supported living service built around independence and structured daily routines.',
-    },
-    {
-      title: 'Rose Project',
-      description: 'A warm residential setting that focuses on wellbeing, social connection and personalised care.',
-    },
-    {
-      title: 'Lily Project',
-      description: 'A companion home designed to strengthen life skills, choice and everyday confidence.',
-    },
-    {
-      title: 'Home Care',
-      description: 'Flexible home support that helps people live safely and independently in their own homes.',
-    },
-  ];
+  const servicesList = Array.isArray(SERVICES)
+    ? SERVICES
+    : Object.values(SERVICES || {});
 
   const resources = [
     { title: 'About us', description: 'Read about our values, mission and the people we support.', href: '/about' },
@@ -72,11 +20,12 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Satash Community Care - Person-Centred Support and Community Living</title>
+        <title>{ORGANIZATION.name} - Person-Centred Support and Community Living</title>
         <meta
           name="description"
-          content="Satash Community Care delivers personalised supported living, person-centred care planning and community services for adults with learning disabilities and complex needs."
+          content={ORGANIZATION.description}
         />
+        <meta name="keywords" content="residential care, supported living, learning disabilities, person-centred care, Essex" />
       </Helmet>
 
       <div className="min-h-screen">
@@ -86,13 +35,13 @@ const HomePage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
               <div>
                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-satash-green-500/15 text-satash-green-100 text-sm font-semibold tracking-[0.12em] uppercase mb-6">
-                  Satash Community Care Projects Ltd
+                  Specialist Children’s Services in South Ockendon
                 </span>
                 <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-                  Residential care with dignity, independence and community at its heart.
+                  Person-centred residential and domiciliary support for children and young people.
                 </h1>
                 <p className="max-w-2xl text-lg md:text-xl text-satash-blue-100 leading-8 mb-8">
-                  Our Mollands Lane homes in South Ockendon provide personalised supported living for adults with learning disabilities, offering eight bedrooms, ensuite facilities, 24/7 care and strong local community connections.
+                  {ORGANIZATION.description}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -119,9 +68,9 @@ const HomePage = () => {
 
                 <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { value: '450+', label: 'People supported' },
+                    { value: '5', label: 'Core projects' },
                     { value: '24/7', label: 'Care & support' },
-                    { value: '30+', label: 'Years of experience' },
+                    { value: '5-18', label: 'Age range at Jasmine' },
                   ].map((item) => (
                     <div key={item.label} className="rounded-3xl bg-white/10 p-6 shadow-soft border border-white/10">
                       <p className="text-4xl font-bold text-white">{item.value}</p>
@@ -131,12 +80,12 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="overflow-hidden rounded-[2rem] bg-white/5 border border-white/10 p-2 shadow-soft-lg">
+              <div className="relative flex items-center justify-center">
+                <div className="rounded-[2rem] bg-white/10 border border-white/20 p-12 shadow-soft-lg">
                   <img
-                    src="https://t4.ftcdn.net/jpg/01/89/24/45/240_F_189244555_ieurJd3t9hSSufU2WB02L9lKuT1ZB1Pj.jpg?auto=format&fit=crop&w=400&q=10"
-                    alt="Caregiver supporting resident"
-                    className="w-full h-[520px] object-cover rounded-[1.5rem]"
+                    src="/favicon-logo.png"
+                    alt="Satash Community Care logo"
+                    className="w-48 h-48 object-contain"
                   />
                 </div>
               </div>
@@ -151,19 +100,19 @@ const HomePage = () => {
                 <span className="inline-flex items-center px-3 py-1 rounded-full bg-satash-green-50 text-satash-green-700 text-sm font-semibold uppercase tracking-[0.1em] mb-4">What we do</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-satash-blue-900 mb-6">Practical support that helps people live well.</h2>
                 <p className="text-lg text-slate-700 leading-relaxed mb-8">
-                  Our services focus on enabling independence, building confidence, and supporting daily life through compassionate care and meaningful relationships.
+                  Our services focus on safety, development, communication and long-term outcomes through consistent, safeguarding-led practice.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {services.map((service) => (
+                  {servicesList.map((service, idx) => (
                     <motion.div
-                      key={service.title}
+                      key={service.id}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5 }}
+                      transition={{ duration: 0.5, delay: idx * 0.05 }}
                       className="rounded-[2rem] bg-white p-8 shadow-soft border border-slate-200"
                     >
-                      <h3 className="text-2xl font-semibold text-satash-blue-900 mb-4">{service.title}</h3>
+                      <h3 className="text-2xl font-semibold text-satash-blue-900 mb-4">{service.name}</h3>
                       <p className="text-slate-600 leading-relaxed">{service.description}</p>
                     </motion.div>
                   ))}
@@ -172,11 +121,18 @@ const HomePage = () => {
               <div className="rounded-[2rem] bg-white p-10 shadow-soft border border-slate-200">
                 <h3 className="text-3xl font-bold text-satash-blue-900 mb-6">How we support people</h3>
                 <div className="space-y-5">
-                  {pillars.map((pillar) => (
-                    <div key={pillar.title} className="rounded-3xl bg-satash-blue-50 p-6">
-                      <h4 className="text-2xl font-semibold text-satash-blue-900 mb-3">{pillar.title}</h4>
-                      <p className="text-slate-700 leading-relaxed">{pillar.description}</p>
-                    </div>
+                  {CARE_VALUES.map((value, idx) => (
+                    <motion.div
+                      key={value.id}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: idx * 0.05 }}
+                      className="rounded-3xl bg-satash-blue-50 p-6"
+                    >
+                      <h4 className="text-2xl font-semibold text-satash-blue-900 mb-3">{value.title}</h4>
+                      <p className="text-slate-700 leading-relaxed">{value.description}</p>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -190,20 +146,20 @@ const HomePage = () => {
               <span className="inline-flex items-center px-3 py-1 rounded-full bg-satash-blue-50 text-satash-blue-700 text-sm font-semibold uppercase tracking-[0.1em]">Our Projects</span>
               <h2 className="mt-6 text-4xl md:text-5xl font-bold text-satash-blue-900">Six specialist services to meet different needs.</h2>
               <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-                Each project combines safe accommodation, practical support, and a focus on independence.
+                Five residential projects plus domiciliary care, each with clear care planning and family partnership.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
-              {projectHighlights.map((project) => (
+              {PROJECTS.map((project, idx) => (
                 <motion.div
-                  key={project.title}
+                  key={project.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
                   className="rounded-[2rem] border border-slate-200 bg-satash-blue-50 p-8 shadow-soft"
                 >
-                  <h3 className="text-2xl font-semibold text-satash-blue-900 mb-4">{project.title}</h3>
+                  <h3 className="text-2xl font-semibold text-satash-blue-900 mb-4">{project.name}</h3>
                   <p className="text-slate-600 leading-relaxed">{project.description}</p>
                 </motion.div>
               ))}

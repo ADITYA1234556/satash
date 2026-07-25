@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
+import ConstructionBanner from '@/components/ConstructionBanner';
 import HomePage from '@/pages/HomePage.jsx';
 import ProjectsPage from '@/pages/ProjectsPage.jsx';
 import ContactPage from '@/pages/ContactPage.jsx';
@@ -18,12 +19,18 @@ import RoseProjectPage from '@/pages/RoseProjectPage.jsx';
 import LilyProjectPage from '@/pages/LilyProjectPage.jsx';
 import HomeCareProjectPage from '@/pages/HomeCareProjectPage.jsx';
 import { Toaster } from '@/components/ui/toaster';
+import { MainLayout } from '@/layouts/MainLayout.jsx';
 
+/**
+ * Main App Component
+ * Routes and layout wrapper for Satash Community Care website
+ */
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
+      <MainLayout>
+        <ConstructionBanner />
         <Header />
         <main className="flex-grow">
           <Routes>
@@ -43,10 +50,11 @@ function App() {
           </Routes>
         </main>
         <Footer />
-      </div>
+      </MainLayout>
       <Toaster />
     </Router>
   );
 }
 
 export default App;
+

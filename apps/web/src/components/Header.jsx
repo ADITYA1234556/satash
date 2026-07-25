@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './Logo';
+import { PROJECTS } from '@/config/site.config.js';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,12 +38,10 @@ const Header = () => {
 
   const projectLinks = [
     { path: '/projects', label: 'All Projects' },
-    { path: '/projects/orchid', label: 'Orchid Project' },
-    { path: '/projects/jasmine', label: 'Jasmine Bungalow' },
-    { path: '/projects/lotus', label: 'Lotus Project' },
-    { path: '/projects/rose', label: 'Rose Project' },
-    { path: '/projects/lily', label: 'Lily Project' },
-    { path: '/projects/homecare', label: 'Home Care' },
+    ...PROJECTS.map((project) => ({
+      path: project.link,
+      label: project.name,
+    })),
   ];
 
   const workLinks = [

@@ -1,6 +1,41 @@
-apps/web/node_modules/*
-node_modules/*
-apps/node_modules/*
+# Dependencies
+node_modules/
+apps/*/node_modules/
+
+# Build outputs
+dist/
+build/
+public_html/
+coverage/
+.vite/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python local env
+.venv/
+
+# Local/generated docs not for deployment
+DEVELOPER_QUICK_REFERENCE.md
+HEALTHCARE_STYLE_GUIDE.md
+PROFESSIONAL_PAGE_IMPROVEMENTS.md
+REORGANIZATION_SUMMARY.md
 HOSTINGER_DEPLOY.md
-images/**
-.venv/*
+
+# Backup/improved page variants
+apps/web/src/pages/*.improved.jsx
