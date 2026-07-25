@@ -2,300 +2,255 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  ArrowRight, 
-  Check,
-  User, 
-  Zap, 
-  HeartHandshake, 
-  Heart, 
-  Lightbulb, 
-  Award, 
-  Shield, 
-  ShieldCheck, 
-  CheckCircle, 
-  Users
-} from 'lucide-react';
-import ValueCard from '@/components/ValueCard.jsx';
+import { ArrowRight } from 'lucide-react';
 
 const HomePage = () => {
-  const coreValues = [
+  const services = [
     {
-      icon: User,
-      title: 'Person Centred',
-      description: 'Placing the individual at the heart of their care, ensuring their choices, needs, and preferences guide all support provided.',
+      title: 'Supported Living',
+      description: 'Secure, homely settings with tailored care, routines and community access.',
     },
     {
-      icon: Zap,
-      title: 'Empowering Service Users',
-      description: 'Providing the tools, encouragement, and opportunities for individuals to take control of their lives and reach their full potential.',
+      title: 'Person-Centred Plans',
+      description: 'Individualised support plans shaped around each person’s goals and preferences.',
     },
     {
-      icon: HeartHandshake,
-      title: 'Respect',
-      description: 'Treating everyone with unconditional positive regard, valuing their unique identity, background, and personal journey.',
-    },
-    {
-      icon: Heart,
-      title: 'Compassion',
-      description: 'Delivering care with genuine empathy, kindness, and a deep understanding of the emotional and physical needs of those we support.',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Challenging Ways of Working',
-      description: 'Continuously seeking innovative approaches and improvements to provide the highest quality of care and support possible.',
-    },
-    {
-      icon: Award,
-      title: 'Excellence',
-      description: 'Striving for the highest standards in all aspects of our service delivery, training, and organizational practices.',
-    },
-    {
-      icon: Shield,
-      title: 'Dignity in Care',
-      description: 'Ensuring that every interaction upholds the self-respect and personal dignity of the individuals we support.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Safety',
-      description: 'Creating and maintaining secure environments where individuals feel protected, comfortable, and free from harm.',
-    },
-    {
-      icon: CheckCircle,
-      title: 'Integrity',
-      description: 'Acting with honesty, transparency, and strong moral principles in all our relationships and professional duties.',
-    },
-    {
-      icon: Users,
       title: 'Community Inclusion',
-      description: 'Actively promoting and facilitating meaningful participation and integration within the wider local community.',
+      description: 'Meaningful local activities, social engagement and learning opportunities.',
     },
   ];
 
-  const commitments = [
-    "Delivering truly person-centred care that adapts to changing needs and aspirations.",
-    "Promoting independence and empowering individuals to make their own life choices.",
-    "Ensuring the highest standards of safety and safeguarding in all our environments.",
-    "Fostering a culture of continuous improvement and professional development for our staff.",
-    "Working in close partnership with families, advocates, and healthcare professionals.",
-    "Actively supporting meaningful community integration and social inclusion."
+  const pillars = [
+    {
+      title: 'Safety & Dignity',
+      description: 'We ensure every person feels safe, respected and empowered every day.',
+    },
+    {
+      title: 'Skilled Support',
+      description: 'Our team are trained in best-practice care, safeguarding and wellbeing.',
+    },
+    {
+      title: 'Trusted Relationships',
+      description: 'We build strong partnerships with families, professionals and service users.',
+    },
   ];
+
+  const projectHighlights = [
+    {
+      title: '109 Mollands Lane',
+      description: 'A four-bedroom home with large gardens, private parking, ensuite or wash facilities and a welcoming communal living environment.',
+    },
+    {
+      title: '111 Mollands Lane',
+      description: 'A companion home offering accessible ground-floor rooms, supportive care, and a dedicated office space for staff coordination.',
+    },
+    {
+      title: 'Lotus Project',
+      description: 'A specialist supported living service built around independence and structured daily routines.',
+    },
+    {
+      title: 'Rose Project',
+      description: 'A warm residential setting that focuses on wellbeing, social connection and personalised care.',
+    },
+    {
+      title: 'Lily Project',
+      description: 'A companion home designed to strengthen life skills, choice and everyday confidence.',
+    },
+    {
+      title: 'Home Care',
+      description: 'Flexible home support that helps people live safely and independently in their own homes.',
+    },
+  ];
+
+  const resources = [
+    { title: 'About us', description: 'Read about our values, mission and the people we support.', href: '/about' },
+    { title: 'Standards', description: 'Discover how we maintain safety, quality and compliance.', href: '/standards' },
+    { title: 'Inspection reports', description: 'View short report summaries and project findings.', href: '/reports' },
+    { title: 'Contact us', description: 'Get in touch to discuss referrals, services or support needs.', href: '/contact' },
+  ];
+
   return (
     <>
       <Helmet>
-        <title>Satash Community Care - Person-Centred Care That Supports Independence</title>
+        <title>Satash Community Care - Person-Centred Support and Community Living</title>
         <meta
           name="description"
-          content="Satash Community Care provides person-centered care services that empower independence and ensure dignity for all individuals in our community."
+          content="Satash Community Care delivers personalised supported living, person-centred care planning and community services for adults with learning disabilities and complex needs."
         />
       </Helmet>
 
       <div className="min-h-screen">
-        {/* Hero Section */}
-        <section
-          className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1608140307536-059abac22ef8')`,
-          }}
-        >
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-satash-blue-900/90 via-satash-blue-800/85 to-satash-blue-700/80"></div>
+        <section className="relative bg-satash-blue-900 text-white overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.12),_transparent_30%),linear-gradient(180deg,_#0f1830_0%,_#0a1226_100%)]"></div>
+          <div className="container mx-auto px-4 py-24 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
+              <div>
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-satash-green-500/15 text-satash-green-100 text-sm font-semibold tracking-[0.12em] uppercase mb-6">
+                  Satash Community Care Projects Ltd
+                </span>
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
+                  Residential care with dignity, independence and community at its heart.
+                </h1>
+                <p className="max-w-2xl text-lg md:text-xl text-satash-blue-100 leading-8 mb-8">
+                  Our Mollands Lane homes in South Ockendon provide personalised supported living for adults with learning disabilities, offering eight bedrooms, ensuite facilities, 24/7 care and strong local community connections.
+                </p>
 
-          {/* Content */}
-          <div className="relative z-10 container mx-auto px-4 text-center text-white">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Logo */}
-              <div className="flex justify-center mb-8">
-                <img
-                  src="https://horizons-cdn.hostinger.com/d9b46d16-4dc3-4cd0-84b6-ed6cf9e16076/fe5debdf442433f8f7ad6befc8157312.png"
-                  alt="Satash Community Care logo"
-                  className="h-[80px] md:h-[110px] w-auto object-contain"
-                />
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/projects" className="inline-flex">
+                    <motion.button
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.96 }}
+                      className="inline-flex items-center justify-center rounded-full bg-satash-green-400 px-8 py-4 text-base font-semibold text-satash-blue-900 shadow-soft hover:bg-satash-green-300 transition-colors"
+                    >
+                      Explore projects
+                      <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
+                    </motion.button>
+                  </Link>
+                  <Link to="/contact" className="inline-flex">
+                    <motion.button
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.96 }}
+                      className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-semibold text-white hover:border-white hover:bg-white/20 transition-colors"
+                    >
+                      Contact us
+                    </motion.button>
+                  </Link>
+                </div>
+
+                <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {[
+                    { value: '450+', label: 'People supported' },
+                    { value: '24/7', label: 'Care & support' },
+                    { value: '30+', label: 'Years of experience' },
+                  ].map((item) => (
+                    <div key={item.label} className="rounded-3xl bg-white/10 p-6 shadow-soft border border-white/10">
+                      <p className="text-4xl font-bold text-white">{item.value}</p>
+                      <p className="mt-3 text-sm text-satash-blue-100">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Supporting Independent Lives
-                <br />
-                <span className="text-satash-green-400">with Care and Respect</span>
-              </h1>
-
-              <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-satash-blue-50">
-                At Satash Community Care, we believe in person-centered care that respects
-                individual choices, promotes independence, and upholds the dignity of every
-                person we serve. Our compassionate team is dedicated to empowering individuals
-                to live fulfilling lives in their communities.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link to="/projects">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-satash-blue-400 text-white rounded-lg font-semibold text-lg shadow-lg hover:bg-satash-blue-500 transition-colors flex items-center space-x-2"
-                  >
-                    <span>Explore Our Projects</span>
-                    <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                  </motion.button>
-                </Link>
-
-                <Link to="/reports">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-satash-blue-600 transition-all"
-                  >
-                    Inspection reports
-                  </motion.button>
-                </Link>
-
-                <Link to="/about">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white hover:text-satash-blue-600 transition-all"
-                  >
-                    Learn More
-                  </motion.button>
-                </Link>
+              <div className="relative">
+                <div className="overflow-hidden rounded-[2rem] bg-white/5 border border-white/10 p-2 shadow-soft-lg">
+                  <img
+                    src="https://t4.ftcdn.net/jpg/01/89/24/45/240_F_189244555_ieurJd3t9hSSufU2WB02L9lKuT1ZB1Pj.jpg?auto=format&fit=crop&w=400&q=10"
+                    alt="Caregiver supporting resident"
+                    className="w-full h-[520px] object-cover rounded-[1.5rem]"
+                  />
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-6 h-10 border-2 border-white rounded-full flex justify-center"
-            >
-              <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-            </motion.div>
-          </motion.div>
         </section>
 
-        {/* Mission Statement Section */}
         <section className="py-20 bg-satash-white-soft">
           <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Our Mission
-              </h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                We are committed to providing high-quality, person-centered care that empowers
-                individuals to maintain their independence, make their own choices, and live
-                with dignity. Through compassionate support and tailored services, we help
-                people thrive in their communities while respecting their unique needs,
-                preferences, and aspirations.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Vision Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Vision</h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                A society where individuals with support needs are empowered to lead fulfilling
-                lives with autonomy, choice, and dignity. We envision communities that are
-                inclusive, supportive, and where each person's voice is heard and valued.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Commitments Section */}
-        <section className="py-16 bg-satash-blue-50">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-10 text-center">
-                Our Commitments
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {commitments.map((commitment, index) => (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <div className="p-2 bg-satash-green-400 rounded-full flex-shrink-0 mt-1">
-                      <Check className="w-5 h-5 text-white" aria-hidden="true" />
-                    </div>
-                    <p className="text-lg text-gray-800 leading-relaxed">
-                      {commitment}
-                    </p>
-                  </motion.div>
-                ))}
+            <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
+              <div>
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-satash-green-50 text-satash-green-700 text-sm font-semibold uppercase tracking-[0.1em] mb-4">What we do</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-satash-blue-900 mb-6">Practical support that helps people live well.</h2>
+                <p className="text-lg text-slate-700 leading-relaxed mb-8">
+                  Our services focus on enabling independence, building confidence, and supporting daily life through compassionate care and meaningful relationships.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {services.map((service) => (
+                    <motion.div
+                      key={service.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      className="rounded-[2rem] bg-white p-8 shadow-soft border border-slate-200"
+                    >
+                      <h3 className="text-2xl font-semibold text-satash-blue-900 mb-4">{service.title}</h3>
+                      <p className="text-slate-600 leading-relaxed">{service.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </motion.div>
+              <div className="rounded-[2rem] bg-white p-10 shadow-soft border border-slate-200">
+                <h3 className="text-3xl font-bold text-satash-blue-900 mb-6">How we support people</h3>
+                <div className="space-y-5">
+                  {pillars.map((pillar) => (
+                    <div key={pillar.title} className="rounded-3xl bg-satash-blue-50 p-6">
+                      <h4 className="text-2xl font-semibold text-satash-blue-900 mb-3">{pillar.title}</h4>
+                      <p className="text-slate-700 leading-relaxed">{pillar.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Core Values Section */}
-        <section className="py-20 bg-gradient-to-br from-satash-blue-50 to-satash-green-50">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Our Core Values
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                These fundamental principles guide everything we do and shape the care we provide to our service users every single day.
+            <div className="max-w-3xl mx-auto text-center mb-14">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-satash-blue-50 text-satash-blue-700 text-sm font-semibold uppercase tracking-[0.1em]">Our Projects</span>
+              <h2 className="mt-6 text-4xl md:text-5xl font-bold text-satash-blue-900">Six specialist services to meet different needs.</h2>
+              <p className="mt-4 text-lg text-slate-600 leading-relaxed">
+                Each project combines safe accommodation, practical support, and a focus on independence.
               </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-              {coreValues.map((value, index) => (
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {projectHighlights.map((project) => (
                 <motion.div
-                  key={value.title}
+                  key={project.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  transition={{ duration: 0.5 }}
+                  className="rounded-[2rem] border border-slate-200 bg-satash-blue-50 p-8 shadow-soft"
                 >
-                  <ValueCard
-                    icon={value.icon}
-                    title={value.title}
-                    description={value.description}
-                  />
+                  <h3 className="text-2xl font-semibold text-satash-blue-900 mb-4">{project.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{project.description}</p>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-satash-blue-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-14">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-satash-green-50 text-satash-green-700 text-sm font-semibold uppercase tracking-[0.1em] mb-4">Useful resources</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-satash-blue-900">Find what matters most.</h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {resources.map((resource) => (
+                <motion.a
+                  key={resource.title}
+                  href={resource.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="block rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft hover:border-satash-blue-300 hover:bg-satash-blue-50 transition-colors"
+                >
+                  <h3 className="text-2xl font-semibold text-satash-blue-900 mb-3">{resource.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{resource.description}</p>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-satash-blue-900 text-white">
+          <div className="container mx-auto px-4">
+            <div className="rounded-[2rem] bg-satash-blue-800/95 p-12 text-center shadow-soft-lg">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to discover how Satash supports people?</h2>
+              <p className="max-w-3xl mx-auto text-lg leading-relaxed text-satash-blue-100 mb-8">
+                Contact us to find out more about our services, project locations, and the care we provide every day.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link to="/projects" className="inline-flex items-center justify-center rounded-full bg-satash-green-400 px-8 py-4 text-base font-semibold text-satash-blue-900 shadow-soft hover:bg-satash-green-300 transition-colors">
+                  Explore projects
+                </Link>
+                <Link to="/contact" className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-semibold text-white hover:bg-white/20 transition-colors">
+                  Contact us
+                </Link>
+              </div>
             </div>
           </div>
         </section>

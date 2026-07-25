@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Heart } from 'lucide-react';
+import Logo from './Logo';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-gradient-to-br from-satash-blue-700 to-satash-blue-900 text-white">
@@ -9,7 +10,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div>
             <Link to="/" className="inline-flex items-center mb-4 group">
-              <img src="https://horizons-cdn.hostinger.com/d9b46d16-4dc3-4cd0-84b6-ed6cf9e16076/fe5debdf442433f8f7ad6befc8157312.png" alt="Satash Community Care logo" className="h-[50px] md:h-[70px] w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <Logo className="text-white" showText={true} />
             </Link>
 
             <p className="text-satash-blue-100 leading-relaxed">
@@ -23,13 +24,18 @@ const Footer = () => {
             <nav aria-label="Footer navigation">
               <ul className="space-y-2">
                 <li>
-                  <Link to="/projects " className="text-satash-blue-100 hover:text-white transition-colors">
-                    Projects
+                  <Link to="/" className="text-satash-blue-100 hover:text-white transition-colors">
+                    Home
                   </Link>
                 </li>
                 <li>
                   <Link to="/about" className="text-satash-blue-100 hover:text-white transition-colors">
                     About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/projects" className="text-satash-blue-100 hover:text-white transition-colors">
+                    Vacancies
                   </Link>
                 </li>
                 <li>
