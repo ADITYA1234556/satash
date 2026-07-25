@@ -1,4 +1,5 @@
 import React from 'react';
+import { Users } from 'lucide-react';
 
 const TeamMembers = ({ members = [] }) => {
   return (
@@ -9,7 +10,9 @@ const TeamMembers = ({ members = [] }) => {
           {members.length > 0 ? (
             members.map((m) => (
               <div key={m.name} className="flex items-center gap-4 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                <img src={m.image} alt={m.name} className="w-20 h-20 rounded-full object-cover" />
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-satash-blue-100">
+                  <Users className="h-10 w-10 text-satash-blue-600" aria-hidden="true" />
+                </div>
                 <div>
                   <p className="font-semibold text-satash-blue-900">{m.name}</p>
                   <p className="text-slate-600 text-sm">{m.role}</p>

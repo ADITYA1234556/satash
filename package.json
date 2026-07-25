@@ -5,8 +5,12 @@
 	"private": true,
 	"scripts": {
 		"dev": "npm --prefix apps/web run dev",
+		"dev:web": "npm --prefix apps/web run dev",
+		"dev:api": "npm --prefix apps/api run dev",
+		"dev:full": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
 		"build": "npm --prefix apps/web run build && node scripts/prepare-hostinger.js",
-		"start": "node server.js",
+		"start": "npm --prefix apps/api run start",
+		"start:legacy": "node server.js",
 		"lint": "npm --prefix apps/web run lint"
 	},
 	"dependencies": {
