@@ -37,12 +37,19 @@ const Header = () => {
   ];
 
   const projectLinks = [
-    { path: '/projects', label: 'All Projects' },
+    { path: '/projects', label: 'All Projects', key: 'all-projects' },
     ...PROJECTS.map((project) => ({
+      key: project.id,
       path: project.link,
       label: project.name,
     })),
   ];
+
+  const closeAllDropdowns = () => {
+    setIsHomeOpen(false);
+    setIsProjectsOpen(false);
+    setIsWorkOpen(false);
+  };
 
   const workLinks = [
     { path: '/work#vacancies', label: 'Current vacancies' },
@@ -101,6 +108,7 @@ const Header = () => {
                     <Link
                       key={link.path}
                       to={link.path}
+                      onClick={closeAllDropdowns}
                       className="block px-4 py-3 text-sm text-slate-700 hover:bg-satash-blue-50 hover:text-satash-blue-700"
                     >
                       {link.label}
@@ -144,8 +152,9 @@ const Header = () => {
                 <div className="py-2">
                   {projectLinks.slice(1).map((link) => (
                     <Link
-                      key={link.path}
+                      key={link.key ?? link.path}
                       to={link.path}
+                      onClick={closeAllDropdowns}
                       className="block px-4 py-3 text-sm text-slate-700 hover:bg-satash-blue-50 hover:text-satash-blue-700"
                     >
                       {link.label}
@@ -160,21 +169,28 @@ const Header = () => {
               onMouseEnter={() => openDropdown(setIsWorkOpen, workTimeoutRef)}
               onMouseLeave={() => closeDropdown(setIsWorkOpen, workTimeoutRef)}
             >
-              <button
-                type="button"
-                onClick={() => setIsWorkOpen((prev) => !prev)}
-                className="inline-flex items-center gap-2 text-lg font-medium text-gray-700 hover:text-satash-blue-600 transition-colors"
-                aria-haspopup="menu"
-                aria-expanded={isWorkOpen}
-              >
-                Work for us
-                <ChevronDown className="w-4 h-4" aria-hidden="true" />
-              </button>
+              <div className="flex items-center gap-1">
+                <Link
+                  to="/work"
+                  className="inline-flex items-center text-lg font-medium text-gray-700 hover:text-satash-blue-600 transition-colors"
+                >
+                  Work for us
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setIsWorkOpen((prev) => !prev)}
+                  className="inline-flex items-center justify-center rounded-full p-1 text-gray-700 hover:text-satash-blue-600 transition-colors"
+                  aria-haspopup="menu"
+                  aria-expanded={isWorkOpen}
+                >
+                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                </button>
+              </div>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: isWorkOpen ? 1 : 0, y: isWorkOpen ? 0 : 10 }}
                 transition={{ duration: 0.2 }}
-                className={`absolute left-0 mt-3 w-72 rounded-2xl border border-slate-200 bg-white shadow-lg ring-1 ring-slate-200 ${
+                className={`absolute left-0 top-full mt-2 w-72 rounded-2xl border border-slate-200 bg-white shadow-lg ring-1 ring-slate-200 z-50 ${
                   isWorkOpen ? 'pointer-events-auto' : 'pointer-events-none'
                 }`}
                 style={{ display: isWorkOpen ? 'block' : 'none' }}
@@ -184,6 +200,7 @@ const Header = () => {
                     <Link
                       key={link.path}
                       to={link.path}
+                      onClick={closeAllDropdowns}
                       className="block px-4 py-3 text-sm text-slate-700 hover:bg-satash-blue-50 hover:text-satash-blue-700"
                     >
                       {link.label}
@@ -242,7 +259,7 @@ const Header = () => {
                 <div className="px-4 py-2 text-xs uppercase tracking-[0.24em] text-slate-500">Projects</div>
                 {projectLinks.map((link) => (
                   <Link
-                    key={link.path}
+                    key={link.key ?? link.path}
                     to={link.path}
                     onClick={() => setIsMenuOpen(false)}
                     className="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:bg-satash-blue-50 hover:text-satash-blue-600"

@@ -20,7 +20,7 @@ const TeamMembers = ({ members = [] }) => {
               </div>
             ))
           ) : (
-            <p className="text-slate-600">No team members added yet. Edit this page to add members.</p>
+            <p className="text-slate-600">Team details will be added soon.</p>
           )}
         </div>
       </div>
