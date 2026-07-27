@@ -16,7 +16,7 @@ const WorkForUsPage = () => {
     {
       id: 'volunteers',
       title: 'Volunteer opportunities',
-      description: 'Contribute your time and skills to support children and young people in meaningful ways.',
+      description: 'Contribute your time and skills to support our service users in meaningful ways.',
       cta: 'Explore volunteering',
     },
     {
@@ -45,7 +45,7 @@ const WorkForUsPage = () => {
       name: 'Project Team Experience',
       role: 'Collaborative and person-centred culture',
       quote:
-        'What stands out is the teamwork. We plan carefully, communicate openly with families and professionals, and always keep the child or young person at the centre of decisions.',
+        'What stands out is the teamwork. We plan carefully, communicate openly with families and professionals, and always keep the person at the centre of decisions.',
     },
   ];
 
@@ -70,7 +70,7 @@ const WorkForUsPage = () => {
               <p className="text-sm uppercase tracking-[0.22em] text-satash-blue-100 mb-4">Work for us</p>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">Build a meaningful career with {ORGANIZATION.shortName}</h1>
               <p className="max-w-3xl mx-auto text-lg leading-relaxed text-satash-blue-100 mb-8">
-                Join a safeguarding-led, person-centred service where your work helps children and young people feel safe, valued and supported to thrive.
+                Join a safeguarding-led, person-centred service where your work helps children, young people and adults feel safe, valued and supported to thrive.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#vacancies" className="inline-flex items-center justify-center rounded-full bg-satash-green-400 px-8 py-4 text-base font-semibold text-satash-blue-900 shadow-soft hover:bg-satash-green-300 transition-colors">

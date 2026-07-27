@@ -35,10 +35,10 @@ const HomePage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
               <div>
                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-satash-green-500/15 text-satash-green-100 text-sm font-semibold tracking-[0.12em] uppercase mb-6">
-                  Specialist Children’s Services in South Ockendon
+                  Specialist Residential and Domiciliary Support in South Ockendon
                 </span>
                 <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-                  Person-centred residential and domiciliary support for children and young people.
+                  Person-centred residential and domiciliary support for children, young people and adults.
                 </h1>
                 <p className="max-w-2xl text-lg md:text-xl text-satash-blue-100 leading-8 mb-8">
                   {ORGANIZATION.description}
@@ -70,7 +70,7 @@ const HomePage = () => {
                   {[
                     { value: '5', label: 'Core projects' },
                     { value: '24/7', label: 'Care & support' },
-                    { value: '5-18', label: 'Age range at Jasmine' },
+                    { value: 'All ages', label: 'Service users supported' },
                   ].map((item) => (
                     <div key={item.label} className="rounded-3xl bg-white/10 p-6 shadow-soft border border-white/10">
                       <p className="text-4xl font-bold text-white">{item.value}</p>
