@@ -15,11 +15,11 @@ import { ContentSection, PageContainer } from '@/layouts/MainLayout.jsx';
 
 const AboutPage = () => {
   const commitments = [
-    'Supporting children and young people with learning disabilities through safe, structured and nurturing environments.',
-    'Creating person-centred plans with active involvement from the young person, families and professionals.',
+    'Supporting children, young people and adults with learning disabilities through safe, structured and nurturing environments.',
+    'Creating person-centred plans with active involvement from the individual, families and professionals.',
     'Promoting rights, dignity, equality and anti-discriminatory practice in all areas of care.',
     'Delivering 24/7 support with trained staff, safeguarding oversight and clear incident reporting.',
-    'Working in partnership with schools, social workers and health professionals for consistent outcomes.',
+    'Working in partnership with schools, social workers, health professionals and families for consistent outcomes.',
     'Maintaining Ofsted-registered standards and continuous service improvement through quality assurance.',
   ];
 
@@ -29,7 +29,7 @@ const AboutPage = () => {
         <title>About Us - {ORGANIZATION.name}</title>
         <meta
           name="description"
-          content="Learn about Satash Community Care Project Ltd, our statement of purpose, safeguarding-led approach, and specialist support for children and young people."
+          content="Learn about Satash Community Care Project Ltd, our statement of purpose, safeguarding-led approach, and specialist support for children, young people and adults."
         />
         <meta name="keywords" content="about us, statement of purpose, children services, Ofsted, safeguarding, person-centred care" />
       </Helmet>
@@ -47,10 +47,10 @@ const AboutPage = () => {
               Our mission
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-satash-blue-900 mb-6">
-              We support children and young people to feel safe, valued and ready to thrive.
+              We support children, young people and adults to feel safe, valued and ready to thrive.
             </h1>
             <p className="text-xl text-slate-700 leading-relaxed">
-              {ORGANIZATION.name} provides specialist support for children and young people, including Jasmine Bungalow at 53 Mollands Lane. Our approach combines person-centred care, safeguarding, education support and family partnership.
+              {ORGANIZATION.name} provides specialist support for children, young people and adults, including Jasmine Bungalow at 53 Mollands Lane. Our approach combines person-centred care, safeguarding, education support and family partnership.
             </p>
           </motion.div>
         </PageContainer>

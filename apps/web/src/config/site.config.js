@@ -6,8 +6,8 @@
 export const ORGANIZATION = {
   name: 'Satash Community Care Projects Ltd',
   shortName: 'Satash',
-  tagline: 'Person-centred residential and domiciliary support for children and young people',
-  description: 'Satash Community Care Project Ltd provides specialist residential projects and domiciliary care in South Ockendon, with person-centred planning, safeguarding-led practice and close partnership with families and professionals.',
+  tagline: 'Person-centred residential and domiciliary support for children, young people and adults',
+  description: 'Satash Community Care Project Ltd provides specialist residential projects and domiciliary care in South Ockendon, supporting children, young people and adults with person-centred planning, safeguarding-led practice and close partnership with families and professionals.',
   registrationNumber: 'Ofsted Registration: SC462450',
   year_established: 1994,
   locations: {
@@ -24,7 +24,7 @@ export const SERVICES = [
   {
     id: 'residential-project-support',
     name: 'Residential Project Support',
-    description: 'Specialist residential support across our project homes, designed for children and young people with learning disabilities and associated needs.',
+    description: 'Specialist residential support across our project homes, designed for children, young people and adults with learning disabilities and associated needs.',
     keyFeatures: [
       '24/7 staffed support',
       'Accessible, structured home environments',
@@ -35,7 +35,7 @@ export const SERVICES = [
   {
     id: 'jasmine-bungalow-specialist-support',
     name: 'Jasmine Bungalow Specialist Support',
-    description: 'Dedicated support at Jasmine (53 Mollands Lane) for up to three children and young people aged 5-18 with personalised, outcomes-focused plans.',
+    description: 'Dedicated support at Jasmine (53 Mollands Lane) for up to three individuals with personalised, outcomes-focused plans.',
     keyFeatures: [
       'Ofsted-registered setting',
       'Age-appropriate routines and safeguarding',
@@ -46,7 +46,7 @@ export const SERVICES = [
   {
     id: 'domiciliary-care',
     name: 'Domiciliary Care',
-    description: 'Flexible home-based support to help children, young people and families maintain safe, stable routines in their own homes.',
+    description: 'Flexible home-based support to help service users and families maintain safe, stable routines in their own homes.',
     keyFeatures: [
       'Personal care and daily living support',
       'Family-centred scheduling',
@@ -57,7 +57,7 @@ export const SERVICES = [
   {
     id: 'person-centred-planning',
     name: 'Person-Centred Planning',
-    description: 'Every child and young person has a tailored care plan shaped with their views, wishes, risks and long-term outcomes in mind.',
+    description: 'Every individual has a tailored care plan shaped with their views, wishes, risks and long-term outcomes in mind.',
     keyFeatures: [
       'Multi-disciplinary input and reviews',
       'Clear safeguarding pathways',

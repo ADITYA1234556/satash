@@ -17,7 +17,7 @@ const ProjectsPage = () => {
         <title>Our Projects - {ORGANIZATION.name}</title>
         <meta
           name="description"
-          content="Explore our specialist residential and supported living services for adults with learning disabilities. Professional, person-centred care across multiple locations."
+          content="Explore our specialist residential and supported living services for children, young people and adults with learning disabilities. Professional, person-centred care across multiple locations."
         />
         <meta name="keywords" content="residential care, supported living, learning disabilities, person-centred care, Essex care services" />
       </Helmet>
@@ -33,7 +33,7 @@ const ProjectsPage = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Specialist Services</h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-satash-blue-50 mb-4">
-              Five specialist projects plus domiciliary care, delivering person-centred support for children and young people.
+              Five specialist projects plus domiciliary care, delivering person-centred support for children, young people and adults.
             </p>
             <p className="text-base md:text-lg max-w-3xl mx-auto text-satash-blue-100">
               {ORGANIZATION.description}
