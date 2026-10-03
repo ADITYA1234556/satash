@@ -70,14 +70,14 @@ const WorkForUsPage = () => {
               <p className="text-sm uppercase tracking-[0.22em] text-satash-blue-100 mb-4">Work for us</p>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">Build a meaningful career with {ORGANIZATION.shortName}</h1>
               <p className="max-w-3xl mx-auto text-lg leading-relaxed text-satash-blue-100 mb-8">
-                Join a safeguarding-led, person-centred service where your work helps children, young people and adults feel safe, valued and supported to thrive.
+                Join our professional care team where your expertise contributes to safeguarding-led, person-centred services that support children, young people and adults to achieve their best outcomes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#vacancies" className="inline-flex items-center justify-center rounded-full bg-satash-green-400 px-8 py-4 text-base font-semibold text-satash-blue-900 shadow-soft hover:bg-satash-green-300 transition-colors">
-                  View vacancies
+                  Explore Opportunities
                 </a>
                 <Link to="/contact" className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-semibold text-white hover:bg-white/20 transition-colors">
-                  Contact recruitment
+                  Enquire About Roles
                 </Link>
               </div>
             </motion.div>

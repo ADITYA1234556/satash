@@ -137,7 +137,7 @@ const ProjectsPage = () => {
                     to={project.link}
                     className="inline-flex items-center justify-center rounded-full bg-satash-green-400 px-6 py-3 text-sm font-semibold text-satash-blue-900 shadow-soft hover:bg-satash-green-300 transition-colors mt-auto"
                   >
-                    Explore this service
+                    Explore project
                     <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                   </Link>
                 </div>

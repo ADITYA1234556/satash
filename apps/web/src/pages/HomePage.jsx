@@ -97,8 +97,8 @@ const HomePage = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
               <div>
-                <span className="inline-flex items-center px-3 py-1 rounded-full bg-satash-green-50 text-satash-green-700 text-sm font-semibold uppercase tracking-[0.1em] mb-4">What we do</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-satash-blue-900 mb-6">Practical support that helps people live well.</h2>
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-satash-green-50 text-satash-green-700 text-sm font-semibold uppercase tracking-[0.1em] mb-4">Our services</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-satash-blue-900 mb-6">Specialist Support That Promotes Independence and Wellbeing</h2>
                 <p className="text-lg text-slate-700 leading-relaxed mb-8">
                   Our services focus on safety, development, communication and long-term outcomes through consistent, safeguarding-led practice.
                 </p>
@@ -119,7 +119,7 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="rounded-[2rem] bg-white p-10 shadow-soft border border-slate-200">
-                <h3 className="text-3xl font-bold text-satash-blue-900 mb-6">How we support people</h3>
+                <h3 className="text-3xl font-bold text-satash-blue-900 mb-6">Our Person-Centred Care Approach</h3>
                 <div className="space-y-5">
                   {CARE_VALUES.map((value, idx) => (
                     <motion.div
@@ -170,8 +170,8 @@ const HomePage = () => {
         <section className="py-20 bg-satash-blue-50">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-14">
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-satash-green-50 text-satash-green-700 text-sm font-semibold uppercase tracking-[0.1em] mb-4">Useful resources</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-satash-blue-900">Find what matters most.</h2>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-satash-green-50 text-satash-green-700 text-sm font-semibold uppercase tracking-[0.1em] mb-4">Information resources</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-satash-blue-900">Key Information & Resources</h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
               {resources.map((resource) => (
@@ -195,9 +195,9 @@ const HomePage = () => {
         <section className="py-20 bg-satash-blue-900 text-white">
           <div className="container mx-auto px-4">
             <div className="rounded-[2rem] bg-satash-blue-800/95 p-12 text-center shadow-soft-lg">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to discover how Satash supports people?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Discuss How We Can Support You?</h2>
               <p className="max-w-3xl mx-auto text-lg leading-relaxed text-satash-blue-100 mb-8">
-                Contact us to find out more about our services, project locations, and the care we provide every day.
+                Contact us to explore our services, project locations, and the specialist care we provide every day.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link to="/projects" className="inline-flex items-center justify-center rounded-full bg-satash-green-400 px-8 py-4 text-base font-semibold text-satash-blue-900 shadow-soft hover:bg-satash-green-300 transition-colors">
